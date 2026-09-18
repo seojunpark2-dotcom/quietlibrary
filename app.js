@@ -39,7 +39,7 @@ function setMinutes(value){
   seconds=minutes*60;
   total=seconds;
   $('clock').textContent=format(seconds);
-  $('books').style.transform=`scale(${Math.max(.85,Math.min(2.2,.85+((minutes-1)/179)*1.35))})`;
+  $('books').style.transform=`scale(${Math.max(1,Math.min(1.75,1+((minutes-1)/179)*.75))})`;
   document.querySelectorAll('.presets button').forEach(button=>button.classList.toggle('active',button.textContent===minutes+'분'));
 }
 
