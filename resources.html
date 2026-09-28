@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <link rel="shortcut icon" href="https://quietlibrary.kr/favicon.ico">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="30·60·90분 공부 계획을 세우고 7일간 집중 결과와 방해 요소를 기록하는 무료 공부 기록표입니다.">
+  <meta name="author" content="Quiet Library 운영자"><meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://quietlibrary.kr/resources">
+  <title>7일 집중 기록표와 공부 계획 도구 | Quiet Library</title>
+  <link rel="stylesheet" href="./info.css"><link rel="stylesheet" href="./resources.css">
+</head>
+<body><main class="page"><header class="topbar"><a class="wordmark" href="/">✦ quiet library</a><nav><a href="/guides">공부 가이드</a><a href="/resources" aria-current="page">공부 기록표</a><a href="/about">사이트 소개</a><a href="/features">기능 소개</a><a href="/contact">문의</a><a href="/privacy">개인정보처리방침</a></nav></header>
+<article class="wrap"><p class="eyebrow">STUDY TOOLKIT</p><h1>계획하고, 집중하고,<br>다음 세션을 더 쉽게.</h1>
+<p class="lead">긴 계획표 대신 지금 할 한 가지를 정하고, 세션이 끝난 뒤 결과를 짧게 남겨 보세요. 입력한 내용은 이 브라우저에만 저장되며 서버로 전송되지 않습니다.</p>
+<p class="article-meta"><span>제작·검토: Quiet Library 운영자</span><span>최종 수정: 2026년 9월 28일</span><span>무료·회원가입 없음</span></p>
+<div class="card toolkit-card">
+  <section id="planner"><h2>1. 오늘의 세션 계획하기</h2><p>과제의 종류와 현재 컨디션을 기준으로 시간을 선택하세요. 긴 시간이 항상 더 좋은 것은 아닙니다.</p>
+    <div class="duration-options" role="group" aria-label="집중 시간 선택">
+      <button type="button" class="duration-button active" data-duration="30">30분<span>가볍게 시작</span></button>
+      <button type="button" class="duration-button" data-duration="60">60분<span>이해와 적용</span></button>
+      <button type="button" class="duration-button" data-duration="90">90분<span>실전과 심화</span></button>
+    </div>
+    <div class="plan-output" aria-live="polite"><strong id="planTitle">30분 추천 구성</strong><p id="planText">5분 준비 · 20분 핵심 작업 · 5분 회상과 다음 행동 기록</p></div>
+    <div class="planning-fields"><label>이번 세션에서 남길 결과<input id="sessionGoal" type="text" maxlength="100" placeholder="예: 영어 독해 1지문을 풀고 오답 근거 표시"></label><label>막혔을 때 사용할 규칙<input id="stuckRule" type="text" maxlength="100" placeholder="예: 한 문제에서 5분 이상 막히면 표시 후 이동"></label><label>세션이 끝난 뒤 첫 행동<input id="nextAction" type="text" maxlength="100" placeholder="예: 오답 2번의 근거 문장 다시 읽기"></label></div>
+    <a class="inline-cta" id="sessionTimerLink" href="/?minutes=30">선택한 시간으로 타이머 열기 →</a>
+  </section>
+  <section id="seven-day-log"><h2>2. 7일 집중 기록표</h2><p>매일 전부 채울 필요는 없습니다. 한 세션이 끝난 뒤 실제 결과와 다음 행동을 1분 안에 적는 것이 목적입니다.</p>
+    <div class="table-scroll"><table class="study-log"><thead><tr><th>날짜</th><th>설정 시간</th><th>과목·목표</th><th>실제 결과</th><th>집중 상태</th><th>방해 요소·다음 행동</th></tr></thead><tbody id="logBody"></tbody></table></div>
+    <div class="log-summary"><div><span>기록한 세션</span><strong id="sessionCount">0회</strong></div><div><span>계획한 집중 시간</span><strong id="minuteTotal">0분</strong></div><div><span>평균 집중 상태</span><strong id="focusAverage">-</strong></div></div>
+    <div class="tool-actions"><button type="button" id="printLog">기록표 인쇄하기</button><button type="button" class="secondary-action" id="clearLog">기록 초기화</button></div>
+  </section>
+  <section><h2>3. 일주일 후 이렇게 확인하세요</h2><div class="checklist"><strong>주간 점검 질문</strong><ul><li>가장 쉽게 시작한 시간대는 언제였나요?</li><li>완료한 결과가 가장 많았던 세션 길이는 무엇인가요?</li><li>같은 방해 요소가 두 번 이상 반복됐나요?</li><li>목표를 자주 남겼다면 범위가 너무 크지 않았나요?</li><li>다음 주에 유지할 것 하나와 바꿀 것 하나는 무엇인가요?</li></ul></div><p>누적 시간이 가장 긴 날보다, 실제 결과가 남고 다음 날에도 반복하기 쉬운 조건을 찾으세요. 기록이 며칠 비었다면 과거를 억지로 채우지 말고 오늘부터 다시 시작하면 됩니다.</p></section>
+  <section><h2>저장 및 개인정보 안내</h2><p>입력한 계획과 기록은 현재 기기의 브라우저 저장 공간에만 보관됩니다. Quiet Library 서버로 전송되지 않으며, 다른 기기나 다른 브라우저에는 자동으로 동기화되지 않습니다. 브라우저 데이터를 삭제하거나 ‘기록 초기화’를 누르면 저장 내용도 사라집니다.</p></section>
+  <div class="related"><h2>기록과 함께 읽으면 좋은 가이드</h2><div class="related-grid"><a href="/guides/study-record">집중 기록을 해석하는 방법 →</a><a href="/guides/morning-night-study">나에게 맞는 시간대 찾기 →</a></div></div>
+</div><p class="notice">기록표는 학습 계획을 돕는 도구이며 성적 향상이나 의료적 효과를 보장하지 않습니다.</p><a class="cta" href="/">집중 타이머 시작하기</a></article></main><footer><span>© 2026 quiet library</span><span>나만의 속도로, 꾸준히.</span></footer><script src="./resources.js"></script><script src="./info-actions.js?v=3"></script></body></html>

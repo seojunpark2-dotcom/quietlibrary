@@ -167,4 +167,10 @@ const player=$('youtube');
 player.style.cssText='position:absolute;width:1px;height:1px;opacity:0;pointer-events:none';
 player.addEventListener('load',()=>{if(youtubeStarted)originalPlaySound();});
 bindEvents();
-setMinutes(25);
+const requestedMinutes=Number(new URLSearchParams(window.location.search).get('minutes'));
+if([30,60,90].includes(requestedMinutes)){
+  setMinutes(requestedMinutes);
+  show('setup');
+}else{
+  setMinutes(25);
+}
