@@ -29,6 +29,7 @@
 ```
 .
 ├── index.html          # 메인 집중 타이머
+├── audio/              # 운영자가 저작권을 보유한 필기소리 MP3
 ├── about.html          # 사이트 소개
 ├── features.html       # 기능 소개
 ├── contact.html        # 문의
@@ -48,12 +49,12 @@
 - HTML5
 - CSS3
 - Vanilla JavaScript
-- YouTube 임베드 재생기
+- HTML5 audio를 통한 MP3 직접 재생
 - Vercel 정적 배포
 
 ## 로컬에서 실행하기
 
-이 저장소를 내려받은 뒤 `index.html`을 브라우저에서 열면 확인할 수 있습니다. YouTube 필기소리는 브라우저의 자동재생 정책에 따라 사용자가 집중 시작 버튼을 누른 뒤 재생됩니다.
+이 저장소를 내려받은 뒤 `index.html`을 브라우저에서 열면 확인할 수 있습니다. 필기소리는 운영자가 저작권을 보유한 음원(`audio/library-ambience.mp3`)을 사용하며, 사용자가 집중 시작 버튼을 누른 뒤 직접 재생됩니다. 원본 전체 길이를 유지한 64kbps 스테레오 MP3이며 반복 재생, 음량 조절, 음소거와 일시정지를 지원합니다.
 
 ## Vercel 배포
 
@@ -65,7 +66,7 @@
 
 ## 광고 및 개인정보 안내
 
-Google AdSense를 이용하는 경우 `ads.txt` 파일을 사이트 최상위 경로에 유지해야 합니다. 개인정보처리방침은 [privacy.html](./privacy.html)에서 확인할 수 있으며, 광고 쿠키 및 YouTube 임베드 사용 내용을 안내합니다.
+Google AdSense를 이용하는 경우 `ads.txt` 파일을 사이트 최상위 경로에 유지해야 합니다. 개인정보처리방침은 [privacy.html](./privacy.html)에서 확인할 수 있으며, 광고 쿠키 및 자체 음원 파일 제공 방식을 안내합니다.
 
 ## 문의
 

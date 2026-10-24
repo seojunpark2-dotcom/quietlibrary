@@ -80,7 +80,7 @@ function pause(){
   $('state').textContent=paused?'잠시 쉬는 중':'FOCUS TIME';
   $('pause').textContent=paused?'▶ 다시 시작':'Ⅱ 일시 정지';
   $('exit').style.display=paused?'block':'none';
-  if(paused)send('pauseVideo'); else playSound();
+  if(paused)$('ambience').pause(); else playSound();
 }
 
 function complete(){
@@ -90,32 +90,33 @@ function complete(){
   $('celebration').classList.add('show');
 }
 
-function send(func,args=[]){
-  $('youtube').contentWindow?.postMessage(
-    JSON.stringify({event:'command',func,args}),
-    'https://www.youtube.com'
-  );
-}
-
 function playSound(){
-  send('setVolume',[Number($('volumeRange').value)]);
-  send(muted?'mute':'unMute');
-  send('playVideo');
+  const player=$('ambience');
+  player.volume=Number($('volumeRange').value)/100;
+  player.muted=muted;
+  if(paused||seconds<=0||!$('focus').classList.contains('active'))return;
+  player.play().catch(()=>{
+    // The timer continues if playback is blocked or the audio cannot load.
+    $('sound').title='소리를 재생하려면 다시 눌러 주세요.';
+  });
 }
 
 function stopSound(){
-  send('stopVideo');
+  const player=$('ambience');
+  player.pause();
+  player.currentTime=0;
 }
 
 function toggleSound(){
   muted=!muted;
   $('sound').classList.toggle('muted',muted);
+  $('sound').setAttribute('aria-pressed',String(!muted));
   playSound();
 }
 
 function volume(value){
   $('volumeLabel').textContent='음량 '+value+'%';
-  send('setVolume',[Number(value)]);
+  $('ambience').volume=Number(value)/100;
 }
 
 function home(){
@@ -127,18 +128,6 @@ function home(){
 function closeInfo(){
   $('modal').classList.remove('show');
 }
-
-let youtubeStarted=false;
-const originalPlaySound=playSound;
-playSound=()=>{
-  if(!youtubeStarted){
-    youtubeStarted=true;
-    $('youtube').src='https://www.youtube.com/embed/wIBnaNuhuCQ?enablejsapi=1&autoplay=1&playsinline=1&rel=0';
-    setTimeout(originalPlaySound,700);
-  }else{
-    originalPlaySound();
-  }
-};
 
 function bindEvents(){
   $('homeButton').addEventListener('click',home);
@@ -163,9 +152,6 @@ function bindEvents(){
   document.addEventListener('click',event=>{if(event.target.closest('button'))clickSound();});
 }
 
-const player=$('youtube');
-player.style.cssText='position:absolute;width:1px;height:1px;opacity:0;pointer-events:none';
-player.addEventListener('load',()=>{if(youtubeStarted)originalPlaySound();});
 bindEvents();
 const requestedMinutes=Number(new URLSearchParams(window.location.search).get('minutes'));
 if([30,60,90].includes(requestedMinutes)){
