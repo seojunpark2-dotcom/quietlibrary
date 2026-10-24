@@ -1,0 +1,15 @@
+.nav-toggle{display:none}
+.topbar .wordmark{white-space:nowrap;flex-shrink:0}
+.page>.topbar{position:relative;z-index:5}
+.topbar a:focus-visible,.topbar button:focus-visible{outline:2px solid #cf9d59;outline-offset:4px}
+@media(max-width:700px){
+  .topbar,.page>.topbar{height:67px;min-height:67px;flex-direction:row;align-items:center;justify-content:space-between;padding:0 18px;gap:14px}
+  .topbar .wordmark{font-size:1.1rem}
+  .topbar .nav-toggle{display:block;min-height:44px;min-width:66px;border:1px solid #cf9d5980;border-radius:4px;padding:8px 12px;background:#24190e;color:#fff4e3;font:inherit;cursor:pointer}
+  .topbar nav{display:none;position:absolute;top:100%;left:0;right:0;z-index:8;background:#24190e;border-bottom:1px solid #cf9d5970;box-shadow:0 10px 20px #0005;padding:12px 18px;gap:4px;grid-template-columns:repeat(2,minmax(0,1fr));text-align:left}
+  .topbar nav.is-open{display:grid}
+  .topbar nav a{display:flex;align-items:center;min-height:44px;padding:8px;font-size:.88rem;color:#fff4e3;white-space:nowrap;opacity:1}
+  .light .topbar nav{background:#fff4df}
+  .light .topbar nav a{color:#302719}
+  .light .topbar .nav-toggle{background:#fff4df;color:#302719}
+}

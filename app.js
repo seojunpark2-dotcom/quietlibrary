@@ -55,6 +55,7 @@ function start(){
   seconds=minutes*60;
   total=seconds;
   paused=false;
+  $('state').textContent='FOCUS TIME';
   show('focus');
   $('pause').textContent='Ⅱ 일시 정지';
   $('exit').style.display='none';

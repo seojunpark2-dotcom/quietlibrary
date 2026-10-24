@@ -23,9 +23,11 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-ancestors 'self'; script-src 'self' https://pagead2.googlesyndication.com https://*.googlesyndication.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; media-src 'self'; frame-src https://*.googlesyndication.com https://*.doubleclick.net; connect-src 'self' https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net; upgrade-insecure-requests"
+          "value": "default-src 'self'; base-uri 'none'; object-src 'none'; form-action 'self'; frame-ancestors 'self'; script-src 'self' 'sha256-JTx0wZbHQOplnNMVbhi6FQO7u8qAT6gdXjL105ysbt0=' 'sha256-Pv3jGW+SlxF/wqc7sFT1thfVwhdO24gJnTBFs8gkki8=' 'sha256-ta/J4U3k9D263GqC2/hlgFUR2MHV0pRAA8hrt4O3pK4=' 'sha256-ARlQHIA4TVE47b/ZpI6Zl/xcSu/q/s9Mm3o83XvShEs=' 'sha256-D5C4PvgW8rwjx3jpbpWX/5kLAoLWS+HiOYvkv+tQB58=' 'strict-dynamic' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; media-src 'self'; frame-src https:; connect-src 'self' https:; upgrade-insecure-requests"
         }
       ]
     }
-  ]
+  ],
+  "buildCommand": "node scripts/sync-csp.cjs",
+  "outputDirectory": "."
 }
